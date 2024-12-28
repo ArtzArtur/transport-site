@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html{
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-gray-200 text-gray-900 font-serif text-lg;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-bold text-gray-800;
+  }
+  a {
+    @apply hover:text-blue-500;
+  }
+  section {
+    @apply py-4 md:py-12;
+  }
+  .section-title {
+    @apply text-3xl font-bold text-center mb-6 md:mb-10 relative flex justify-center items-center gap-4;
+  }
+}
+@layer components {
+  /* Navigation */
+  .navbar {
+    @apply sticky top-0 w-full bg-white shadow-md z-30 py-2;
+  }
+  .navbar-content {
+    @apply container flex items-center justify-end p-2;
+  }
+  .nav-link {
+    @apply hover:text-blue-500;
+    margin: 0 !important;
+  }
+  .menu {
+    @apply hidden md:flex gap-4 text-xl font-bold;
+  }
+  .mobile-menu {
+    @apply fixed top-12 left-0 w-full h-full bg-white hidden flex-col items-center justify-center;
+  }
+
+  /* Hero Section */
+  .hero {
+    @apply h-screen bg-cover bg-center relative;
+  }
+  .hero-content {
+    @apply absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center flex-col;
+  }
+  .hero-title {
+    @apply max-w-[75%] text-center text-white text-4xl md:text-6xl font-bold bg-[rgba(0,0,0,0.2)] p-4 rounded-md;
+  }
+  .hero-cta {
+    @apply text-white;
+  }
+
+  /* About Section */
+  .about {
+    @apply bg-white pt-8 md:pt-12;
+  }
+  .about-wrap {
+    @apply mx-auto flex flex-wrap items-center justify-between gap-4;
+  }
+  .about-image {
+    @apply rounded-lg shadow-md max-w-full h-auto block;
+  }
+
+  /* Offer Section */
+  .offer-card {
+    @apply bg-white shadow-md rounded-md flex justify-between items-center flex-col gap-4 p-4 md:text-center;
+  }
+  .offer-card-title {
+    @apply flex-1;
+  }
+  .offer-card-image {
+    @apply flex-[0,1,auto] aspect-video h-40 block rounded-md;
+  }
+  /* Gallery */
+  .gallery-grid {
+    @apply grid gap-2 sm:grid-cols-2 lg:grid-cols-3;
+  }
+  .gallery-item {
+    @apply cursor-pointer max-w-full aspect-video rounded-md;
+  }
+
+  /* Contact Section */
+  .contact {
+    @apply bg-gray-50;
+  }
+  .contact-wrap {
+    @apply p-4 border rounded-md border-gray-400 grid md:grid-cols-2 justify-center md:justify-normal items-center gap-4 relative xl:max-w-[40rem] mx-auto;
+  }
+  .contact-numbers {
+    @apply grid gap-2 justify-self-center text-lg;
+  }
+  .contact-numbers-item {
+    @apply block bg-white p-2 rounded-md;
+  }
+  /* Lightbox */
+  .lightbox {
+    @apply fixed bg-black bg-opacity-40 w-full h-full top-0 left-0 flex justify-center items-center z-50;
+  }
+  .lightbox-image {
+    @apply max-w-full h-auto;
+  }
+  .lightbox-close-icon {
+    @apply text-5xl text-white absolute top-6 right-4 cursor-pointer;
+  }
+}
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  .icon-contact {
+    @apply text-green-400 font-bold text-2xl;
+  }
+  section .section-title::before{
+    content:'';
+    @apply inline-block h-8 w-8 bg-yellow-300 flex-shrink;
+  }
+  .triangle {
+    @apply block w-0 h-0 mx-auto;
+    transform: rotate(180deg);
+    border-style: solid;
+    border-width: 0 9px 14px 9px;
+    border-color: transparent transparent #fff transparent;
+}
+.hero-cta:hover .triangle{
+  @apply border-b-blue-500;
+}
+}
